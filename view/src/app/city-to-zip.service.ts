@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-//import 'rxjs/add/operator/map';
-//import 'rxjs/add/operator/toPromise';
 import {City} from './city';
 import {Country} from './country';
 import {State} from './state';
+import {ZipCode} from './zipcode';
 
 const httpOptions = {
   headers : new HttpHeaders({'Content-Type':'application/json'})
@@ -18,22 +17,23 @@ export class CityToZipService {
   countries : Country[];
   cities : City[];
   states : State[];
+  zipcode : ZipCode;
   constructor(private http:HttpClient) { }
 
   //retriving Country
-  getCountry(){
-    return this.http.get('http://localhost:3000/cityToZip/loadCountry');
+  getCountryService():Observable<Country[]>{
+    return this.http.get<Country[]>('http://localhost:3000/cityToZip/loadCountry');
   }
   //retriving State Based on Country
-  getState(country){
-    return this.http.get(`http://localhost:3000/cityToZip/${country}/getState`);
+  getStateService(country):Observable<State[]>{
+    return this.http.get<State[]>(`http://localhost:3000/cityToZip/${country}/loadState`);
   }
   //retriving City Based on State(Country)
-  getCity(state){
-    return this.http.get(`http://localhost:3000/cityToZip/${state}/getCity`);
+  getCityService(state):Observable<City[]>{
+    return this.http.get<City[]>(`http://localhost:3000/cityToZip/${state}/loadCity`);
   }
   //retriving Zip Based on City(State(Country))
-  getZip(city){
-    return this.http.get(`http://localhost:3000/cityToZip/${city}/getZip`);
+  getZipService(city):Observable<ZipCode>{
+    return this.http.get<ZipCode>(`http://localhost:3000/cityToZip/${city}/loadZip`);
   }
 }
