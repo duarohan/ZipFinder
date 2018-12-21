@@ -1,0 +1,12 @@
+<br><br><br>
+<div class="input-group mb-3">
+<form #zipForm = "ngForm" (ngSubmit) = "onSubmit(zipForm)">
+  <input type="text" name="zip" #_zip="ngModel" [(ngModel)]="zipToAreaService.selectedZip.zip" class="form-control" placeholder="Enter ZipCode.." aria-label="Recipient's username" aria-describedby="button-addon2">
+  <br>  
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" (click)="getArea(zip)" type="button" id="button-addon2">Submit</button>
+    <button class="btn btn-outline-secondary" (click)="resetForm(zipForm)" type="button" id="button-addon2">Reset</button>
+  </div>
+</form>
+</div>
+<span class="label" name="area" #_area ="ngModel" [(ngModel)]="zipToAreaService.selectedZip"></span>

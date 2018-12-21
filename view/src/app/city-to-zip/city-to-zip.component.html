@@ -1,0 +1,70 @@
+<br><br><br>
+<div class="input-group mb-3">
+    <select class="custom-select" id="inputGroupSelect02">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div class="input-group-append">
+      <label class="input-group-text" for="inputGroupSelect02">Options</label>
+    </div>
+</div>
+<div class="input-group mb-3">
+    <select class="custom-select" id="inputGroupSelect02">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div class="input-group-append">
+      <label class="input-group-text" for="inputGroupSelect02">Options</label>
+    </div>
+</div>
+<div class="input-group mb-3">
+    <select class="custom-select" id="inputGroupSelect02">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <div class="input-group-append">
+      <label class="input-group-text" for="inputGroupSelect02">Options</label>
+    </div>
+</div>
+      
+<!--
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select [(ngModel)]="yourCountry" id="country">
+    <option value="" disabled selected>>Choose Country..</option>
+    <option *ngFor="let option of countries$ | async" [value]="option.value">{item.country}}</option>
+  </select>
+</div>
+-->
+<!--
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select [(ngModel)]="yourState" id="state">
+    <option value="" disabled selected>>Choose State..</option>
+    <option *ngFor="let option of states$ | async" [value]="option.value">{item.state}}</option>
+  </select>
+</div>
+-->
+<!--
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+  </div>
+  <select [(ngModel)]="yourCity" id="city">
+    <option value="" disabled selected>>Choose City..</option>
+    <option *ngFor="let option of cities$ | async" [value]="option.value">{item.city}}</option>
+  </select>  
+</div>
+-->
+<button class="btn btn-outline-secondary" (click)="getZip()" type="button" id="button-addon2">Find Zip</button>
+<div>{{ZipCode}}</div>
