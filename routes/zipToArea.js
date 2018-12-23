@@ -1,28 +1,24 @@
 var express = require('express');
 var router = express.Router();
-var city = require("../models/city");
-var state = require("../models/state");
-var country = require("../models/country");
-var path = require('path');
-var appRoot = path.resolve();
+var zipcodes = require('zipcodes');
+
 
 router.get('/:zipcode',function(req, res){
-  city.findOne({"id": req.params.zipcode},function(err,cityData){
-    if(err){
-      return console.dir(err);
+  console.log();
+  if (isNaN(req.params.zipcode)){
+    res.json("Please enter a valid number")
+  }else{
+    var zip = Number(req.params.zipcode);
+    var data = zipcodes.lookup(zip);
+    if (typeof(data) == "undefined"){
+      res.json("Zip Code not listed with us")
     }
-    state.findOne({"id":cityData.state_id},function(err,stateData){
-      if(err){
-        return console.dir(err);
-      }
-      country.findOne({"id":stateData.country_id},function(err,countryData){
-        if(err){
-          return console.dir(err);
-        }
-        res.send(`${cityData.name},${stateData.name},${countryData.name}`)
-      })
-    })
-  })
+    else{
+      res.json(`The zip code entered is of the area --> ${data.city},${data.state},${data.country}`)
+    }
+  }
+
+  
 })
 
 module.exports = router;

@@ -1,10 +1,10 @@
 <br><br><br>
 <div class="input-group mb-3">
-  <input type="text" name="zip" [(ngModel)]="zip" class="form-control" placeholder="Enter ZipCode..">
+  <input type="text" name="zip" [(ngModel)]="zip" class="form-control" placeholder="Enter ZipCode.. " ngDefaultControl>
   <br>  
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" (click)="getArea(zip)" type="button" id="button-addon2">Submit</button>
-    <button class="btn btn-outline-secondary" (click)="resetForm()" type="button" id="button-addon2">Reset</button>
+    <button class="btn btn-outline-secondary" (click)="getArea(zip)" type="button" id="button-addon2">Go</button>
+    <button class="btn btn-outline-secondary" (click)="reset()" type="button" id="button-addon2">Reset</button>
   </div>
 </div>
-<span class="label" name="area" [(ngModel)]="areaVal">{{areaVal}}</span>
+<span class="label" name="areaVal" [(ngModel)]="areaVal" ngDefaultControl >{{areaVal}}</span>

@@ -2,20 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-
+import {AppRoutingModule} from './app-routing-module';
 
 import { AppComponent } from './app.component';
-import { CityToZipComponent } from './city-to-zip/city-to-zip.component';
-import { ZipToAreaComponent } from './zip-to-area/zip-to-area.component';
+import {routingComponents} from './app-routing-module';
+import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CityToZipComponent,
-    ZipToAreaComponent
+    routingComponents,
+    MainPageComponent
   ],
   imports: [
-    BrowserModule,FormsModule,HttpClientModule
+    BrowserModule,FormsModule,HttpClientModule,AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

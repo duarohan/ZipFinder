@@ -22,7 +22,7 @@ Develop web app to  fetch address from  zip code and vice versa
 ------------------------------------------------------------------------------
 #Steps taken to setup the application -
 
-1. Create Json file for 3 dbs from https://github.com/hiiamrohit/Countries-States-Cities-database
+1. Create Json file for 3 dbs from https://github.com/hiiamrohit/Countries-States-Cities-database and load it on Mongo Db Atlas
 2. Create models(db schmeas) city,country,state.
 3. Create mongo clusters in mongoDB Atlas and create config/db.js and load Json files to respective dbs.
 4. Create the app.js and mention the routes.
@@ -32,11 +32,12 @@ Develop web app to  fetch address from  zip code and vice versa
 8. Installed Angular to the project to develop the frontEnd screen.
 
 
-##Instructions to Run
+#Instructions to Run
 
 1. Git pull
-2. npm install
-3. ng build on the view folder
-4. hit nodemon, start using APIs on localhost:3000
-5. ng serve, to lauch the application on localhost:4200
+2. NPM install on root and on the /view folder
+3. Ng build on the /view folder
+4. Hit nodemon on root, start using APIs on localhost:3000
+5. Hit ng serve on /view, to lauch the application
+6. Navigate to localhost:4200
 

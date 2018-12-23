@@ -51,7 +51,7 @@ router.get('/:city/loadZip',function(req, res){
     if(err){
       return console.dir(err);
     }
-    res.send(cityData.id);
+    res.json(`Zip Code --> ${cityData.id}`);
     })    
 })
 

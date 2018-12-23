@@ -8,16 +8,17 @@ import {ZipToAreaService} from '../zip-to-area.service';
   styleUrls: ['./zip-to-area.component.css'],
   providers:[ZipToAreaService]
 })
-export class ZipToAreaComponent implements OnInit {
-  areaVal;  
+export class ZipToAreaComponent implements OnInit {  
   constructor(private zipToAreaService:ZipToAreaService) { }
-
+  areaVal;
+  zip;
   ngOnInit() {
-    this.resetForm();
+    this.reset();
   }
 
-  resetForm(){
-    this.zipToAreaService.selectedZip = {zip:null,area:""}    
+  reset(){
+    this.zip = null;
+    this.areaVal =null;    
   }
 
   getArea(zip){
