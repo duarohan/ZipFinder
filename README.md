@@ -27,7 +27,7 @@ Develop web app to  fetch address from  zip code and vice versa
 3. Create mongo clusters in mongoDB Atlas and create config/db.js and load Json files to respective dbs.
 4. Create the app.js and mention the routes.
 5. Write CRUD operations for cityToZip and ZipToArea.
-6. Created 5 APIs -'http://localhost:3000/cityToZip/loadCountry','cityToZip/:country/loadState','cityToZip/:state/loadCity','cityToZip/:city/loadZip','zipToArea/:zipcode'
+6. Created 5 APIs -'http://localhost:3000/cityToZip/loadCountry','cityToZip/:country/loadState','cityToZip/:country/:state/loadCity','cityToZip/:country/:state/:city/loadZip','zipToArea/:zipcode'
 7. Tested ZipToArea and cityToZip APIs
 8. Installed Angular to the project to develop the frontEnd screen.
 

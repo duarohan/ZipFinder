@@ -25,12 +25,12 @@ export class CityToZipComponent implements OnInit {
     this.cityToZipService.getStateService(country).subscribe(data=> this.stateCollection = data);
   }
 
-  getCity(state){
-    this.cityToZipService.getCityService(state).subscribe(data=> this.cityCollection = data);
+  getCity(state,country){
+    this.cityToZipService.getCityService(state,country).subscribe(data=> this.cityCollection = data);
   } 
 
-  getZip(city){
-    this.cityToZipService.getZipService(city).subscribe(data=> this.zipCodeVal = data);
+  getZip(city,state,country){
+    this.cityToZipService.getZipService(city,state,country).subscribe(data=> this.zipCodeVal = data);
   } 
 
 }

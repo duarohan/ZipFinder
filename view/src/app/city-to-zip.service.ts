@@ -29,11 +29,11 @@ export class CityToZipService {
     return this.http.get<State[]>(`http://localhost:3000/cityToZip/${country}/loadState`);
   }
   //retriving City Based on State(Country)
-  getCityService(state):Observable<City[]>{
-    return this.http.get<City[]>(`http://localhost:3000/cityToZip/${state}/loadCity`);
+  getCityService(state,country):Observable<City[]>{
+    return this.http.get<City[]>(`http://localhost:3000/cityToZip/${country}/${state}/loadCity`);
   }
   //retriving Zip Based on City(State(Country))
-  getZipService(city):Observable<ZipCode>{
-    return this.http.get<ZipCode>(`http://localhost:3000/cityToZip/${city}/loadZip`);
+  getZipService(city,state,country):Observable<ZipCode>{
+    return this.http.get<ZipCode>(`http://localhost:3000/cityToZip/${country}/${state}/${city}/loadZip`);
   }
 }

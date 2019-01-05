@@ -12,7 +12,7 @@
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">State</label>
   </div>
-  <select [(ngModel)]="yourState" id="state" (change)="getCity(yourState)">
+  <select [(ngModel)]="yourState" id="state" (change)="getCity(yourState,yourCountry)">
     <option *ngFor="let option of stateCollection" value="{{option}}">{{option}}</option>
   </select>
 </div>
@@ -21,7 +21,7 @@
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">City</label>
   </div>
-  <select [(ngModel)]="yourCity" id="city" (change)="getZip(yourCity)">
+  <select [(ngModel)]="yourCity" id="city" (change)="getZip(yourCity,yourState,yourCountry)">
     <option *ngFor="let option of cityCollection" value="{{option}}">{{option}}</option>
   </select>  
 </div>

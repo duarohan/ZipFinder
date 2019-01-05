@@ -31,8 +31,12 @@ router.get('/:country/loadState',function(req, res){
   })
 })
 
-router.get('/:state/loadCity',function(req, res){
-  state.findOne({"name": req.params.state},function(err,stateData){
+router.get('/:country/:state/loadCity',function(req, res){
+  country.findOne({"name":req.params.country},function(err,countryData){
+    if(err){
+      return console.dir(err);
+    }
+  state.findOne({"country_id": countryData.id,"name": req.params.state},function(err,stateData){
       if(err){
         return console.dir(err);
       }
@@ -45,14 +49,25 @@ router.get('/:state/loadCity',function(req, res){
       })    
   })
 })
+})
 
-router.get('/:city/loadZip',function(req, res){
-  city.findOne({"name": req.params.city},function(err,cityData){
+router.get('/:country/:state/:city/loadZip',function(req, res){
+  // console.log(`${req.params.country},${req.params.state},${req.params.city}`)
+  country.findOne({"name":req.params.country},function(err,countryData){
+    if(err){
+      return console.dir(err);
+    }
+  state.findOne({"country_id": countryData.id,"name": req.params.state},function(err,stateData){
+      if(err){
+        return console.dir(err);
+      }
+  city.findOne({"state_id":stateData.id,"name": req.params.city},function(err,cityData){
     if(err){
       return console.dir(err);
     }
     res.json(`Zip Code --> ${cityData.id}`);
     })    
 })
-
+})
+})
 module.exports = router;
