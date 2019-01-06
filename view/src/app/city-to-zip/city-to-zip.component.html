@@ -8,7 +8,7 @@
   </select>
 </div>
 
-<div class="input-group mb-3" id="stateBlock">
+<div class="input-group mb-3" id="stateBlock" [hidden]="HideStateDropDown">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">State</label>
   </div>
@@ -17,7 +17,7 @@
   </select>
 </div>
 
-<div class="input-group mb-3" id ="cityBlock" >
+<div class="input-group mb-3" id ="cityBlock" [hidden]="HideCityDropDown">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">City</label>
   </div>
@@ -26,5 +26,5 @@
   </select>  
 </div>
 
-<span class="label" name="zipCodeVal" [(ngModel)]="zipCodeVal" ngDefaultControl>{{zipCodeVal}}</span>
+<span class="label" name="zipCodeVal" [(ngModel)]="zipCodeVal" [hidden]="HideZipLabel" ngDefaultControl>{{zipCodeVal}}</span>
 
