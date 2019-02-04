@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {CityToZipService} from '../city-to-zip.service';
+  import {CityToZipService} from '../city-to-zip.service';
 
 
 @Component({

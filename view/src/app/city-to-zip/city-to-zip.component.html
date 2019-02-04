@@ -4,27 +4,29 @@
     <label class="input-group-text" for="inputGroupSelect01">Country</label>
   </div>
   <select [(ngModel)]="yourCountry" id="country" (change)="getState(yourCountry)">
+  <!-- <select #yourCountry id="country" (change)="getState(yourCountry.value)"> -->
     <option *ngFor="let option of countryCollection" value="{{option}}">{{option}}</option>
   </select>
 </div>
 
-<div class="input-group mb-3" id="stateBlock" [hidden]="HideStateDropDown">
+<div *ngIf="!HideStateDropDown" class="input-group mb-3" id="stateBlock">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">State</label>
   </div>
   <select [(ngModel)]="yourState" id="state" (change)="getCity(yourState,yourCountry)">
+  <!-- <select #yourState id="state" (change)="getCity(yourState.value,yourCountry.value)"> -->
     <option *ngFor="let option of stateCollection" value="{{option}}">{{option}}</option>
   </select>
 </div>
 
-<div class="input-group mb-3" id ="cityBlock" [hidden]="HideCityDropDown">
+<div *ngIf="!HideCityDropDown" class="input-group mb-3" id ="cityBlock">
   <div class="input-group-prepend">
     <label class="input-group-text" for="inputGroupSelect01">City</label>
   </div>
   <select [(ngModel)]="yourCity" id="city" (change)="getZip(yourCity,yourState,yourCountry)">
+    <!-- <select #yourCity id="city" (change)="getZip(yourCity.value,yourState.value,yourCountry.value)"> -->
     <option *ngFor="let option of cityCollection" value="{{option}}">{{option}}</option>
   </select>  
 </div>
-
-<span class="label" name="zipCodeVal" [(ngModel)]="zipCodeVal" [hidden]="HideZipLabel" ngDefaultControl>{{zipCodeVal}}</span>
+<p *ngIf="!HideZipLabel">ZipCode: <span  class="label" ngDefaultControl>{{zipCodeVal}}</span></p>
 

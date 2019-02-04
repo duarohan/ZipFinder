@@ -4,7 +4,8 @@
   "description": "application to find zip from city and address from zip",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine",
+    "start" : "nodemon"
   },
   "author": "Rohan Dua",
   "license": "ISC",
@@ -16,7 +17,11 @@
     "mongoose": "^5.3.10",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.5",
+    "request": "^2.88.0",
     "rxjs": "^6.3.3",
     "zipcodes": "^8.0.0"
+  },
+  "devDependencies": {
+    "jasmine": "^3.3.1"
   }
 }
